@@ -13,7 +13,9 @@ const options = {
 const searchbox = document.querySelector(".search input")
 const searchbtn = document.querySelector(".search button")
 const weathericon = document.querySelector(".weathericon")
-
+const weather = document.querySelector(".weather")
+const para = document.createElement("p")
+weather.appendChild(para)
 
 async function getweather(city){
 
@@ -25,8 +27,11 @@ async function getweather(city){
 	document.querySelector(".windspeed").innerHTML = result.current.wind_kph + "Km/h"
     document.querySelector(".cityname").innerHTML = city
 	weathericon.src = result.current.condition.icon
+   para.innerHTML  = result.current.condition.text
+ 
 }
-
+	
+	
 
 
 searchbtn.addEventListener("click",()=>{
